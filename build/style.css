@@ -58,16 +58,23 @@ body {
   display: block;
 }
 
+.card__image-container .panel-mobile-image {
+  display: none;
+}
+
 .card__image-container .panel-image .woman-desktop {
   position: absolute;
   top: 13.92%;
   left: -15.65%;
 }
 
-/* FAQ */
-.card__image-container {
-  vertical-align: middle;
+.card__image-container .panel-image .floating-box {
+  position: absolute;
+  top: 40%;
+  left: -18.7%;
 }
+
+/* FAQ */
 
 .card__faq-container {
   width: 100%;
@@ -95,8 +102,9 @@ body {
   justify-content: space-between;
   font-size: var(--font-size-600);
   letter-spacing: 0.005em;
-  color: var(--neutral-600);
   list-style-type: none;
+  color: var(--neutral-600);
+  transition: 300ms ease-in-out;
 }
 
 .card__faq-container .accordion-item .accordion-button::marker,
@@ -125,8 +133,62 @@ body {
   margin-bottom: 1.1rem;
   font-weight: 700;
   color: var(--neutral-700);
+  transition: 300ms ease-in-out;
 }
 
 .card__faq-container .accordion-item .accordion-content {
   color: var(--neutral-500);
+}
+
+@media only screen and (max-width: 996px) {
+  .h_wrapper {
+    padding: 0 2.4rem;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    margin: 14.8rem 0 8.5rem;
+    padding: 0 2.4rem;
+  }
+
+  .card__image-container .panel-image {
+    display: none;
+  }
+
+  .card__image-container .panel-mobile-image {
+    display: block;
+    width: 100%;
+    height: 13rem;
+  }
+
+  .card__image-container .panel-mobile-image .woman-mobile {
+    position: absolute;
+    top: -82.3%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 23.7rem;
+  }
+
+  .card__image-container .panel-mobile-image::before {
+    content: url(./images/bg-pattern-mobile.svg);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 24rem;
+    height: 10.4rem;
+  }
+
+  .card__faq-container {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 4.8rem;
+  }
+
+  .card__faq-container .card__header {
+    margin-bottom: 3.2rem;
+    text-align: center;
+  }
 }
