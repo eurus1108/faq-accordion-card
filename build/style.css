@@ -52,10 +52,23 @@ body {
 .card__image-container {
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
 .card__image-container .panel-image {
   display: block;
+}
+
+.card__image-container .panel-image::before {
+  content: url("./images/bg-pattern-desktop.svg");
+  position: absolute;
+  /* top: -58%;
+  left: -122.76%; */
+  top: -30rem;
+  left: -56.5rem;
+  display: block;
+  width: 96.7rem;
+  height: 94.5rem;
 }
 
 .card__image-container .panel-mobile-image {
@@ -68,10 +81,11 @@ body {
   left: -15.65%;
 }
 
-.card__image-container .panel-image .floating-box {
+.card .floating-box {
   position: absolute;
   top: 40%;
-  left: -18.7%;
+  left: -9.5%;
+  z-index: 2;
 }
 
 /* FAQ */
@@ -148,8 +162,18 @@ body {
   .card {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 32.7rem;
     margin: 14.8rem 0 8.5rem;
     padding: 0 2.4rem;
+  }
+
+  .card .floating-box {
+    display: none;
+  }
+
+  .card__image-container {
+    overflow: visible;
   }
 
   .card__image-container .panel-image {
