@@ -62,8 +62,6 @@ body {
 .card__image-container .panel-image::before {
   content: url("./images/bg-pattern-desktop.svg");
   position: absolute;
-  /* top: -58%;
-  left: -122.76%; */
   top: -30rem;
   left: -56.5rem;
   display: block;
@@ -126,9 +124,9 @@ body {
   display: none;
 }
 
-.card__faq-container .accordion-item .accordion-button:hover {
-  color: var(--neutral-700);
-  font-weight: 700;
+.card__faq-container .accordion-item .accordion-button:hover,
+.card__faq-container .accordion-item[open] .accordion-button:hover {
+  color: var(--primary-600);
 }
 
 .card__faq-container .accordion-item .accordion-button::after {
